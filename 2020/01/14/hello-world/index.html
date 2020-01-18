@@ -402,6 +402,30 @@
 
 
 
+  <div id="giteement-ctn"></div>
+  
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
+  
+  <script>
+  <!-- id: "第一篇简介" -->
+  var giteement = new Giteement({
+    id: '20200114130113',
+    owner: 'yongjunfan',
+    repo: 'yilia-plus-demo',
+    backcall_uri: 'https://yongjun-fan.github.io/',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: 'd5d33a7c745f97d7ffdcc217965a3f176b65be27f86c9362936b24cb7b1e4b58',
+      client_secret: '813196982de8c218f7980518acf75bcfddce90f194bc3f10fd285c11cf65e2b8 '
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
+
+
+
+
 
 
 
