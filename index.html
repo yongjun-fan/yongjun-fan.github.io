@@ -201,6 +201,144 @@
 
 
   
+    <article id="post-java-list集合类 (1)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/01/21/java-list%E9%9B%86%E5%90%88%E7%B1%BB%20(1)/" target="_blank">java-list集合类 (1)</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/01/21/java-list%E9%9B%86%E5%90%88%E7%B1%BB%20(1)/" class="archive-article-date">
+        <time datetime="2020-01-21T04:23:52.794Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>title: Java-List</p>
+<h2 id="List是Java中比较常用的集合类，关于List接口有很多实现类"><a href="#List是Java中比较常用的集合类，关于List接口有很多实现类" class="headerlink" title="List是Java中比较常用的集合类，关于List接口有很多实现类"></a>List是Java中比较常用的集合类，关于List接口有很多实现类</h2><h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p>ArrayList底层是用数组实现的，可以认为ArrayList是一个可改变大小的数组。随着越来越多的元素被添加到ArrayList中，其规模是动态增加的。<br>集合的创建：<code>ArrayList&lt;Integer&gt; arrayList = new ArrayList&lt;Integer&gt;();</code></p>
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><p>LinkedList底层是通过双向链表实现的。所以，LinkedList和ArrayList之前的区别主要就是数组和链表的区别。</p>
+<p>数组中查询和赋值比较快，因为可以直接通过数组下标访问指定位置。</p>
+<p>链表中删除和增加比较快，因为可以直接通过修改链表的指针（Java中并无指针，这里可以简单理解为指针。其实是通过Node节点中的变量指定）进行元素的增删。<br>LinkedList和ArrayList相比，增删的速度较快。但是查询和修改值的速度较慢<br>集合的创建：<code>LinkedList&lt;Integer&gt; linkedList = new LinkedList&lt;Integer&gt;();</code><br>此处之上为转载：<a href="https://blog.csdn.net/qq_38218238/article/details/82904926" target="_blank" rel="noopener">https://blog.csdn.net/qq_38218238/article/details/82904926</a></p>
+<h2 id="List的用法"><a href="#List的用法" class="headerlink" title="List的用法"></a>List的用法</h2><p>List接口的常用实现类有ArrayList和LinkedList，在使用List集合时，通常情况下声明为List类型，实例化时根据实际情况的需要，实例化ArrayList或LinkedList；</p>
+<h2 id="list-add"><a href="#list-add" class="headerlink" title="list.add()"></a><strong>list.add()</strong></h2><p>添加对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt;list&#x3D;new LinkedList&lt;String&gt;();</span><br><span class="line">  list.add(&quot;tom&quot;);</span><br><span class="line">  System.out.println(list.get(0));</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tom</span><br></pre></td></tr></table></figure>
+<p>注意：add(int index, Object obj)，向指定索引位置添加对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">List&lt;String&gt;list&#x3D;new ArrayList&lt;String&gt;();</span><br><span class="line">   list.add(0,&quot;a&quot;);</span><br><span class="line">   list.add(1,&quot;e&quot;);</span><br><span class="line">   list.add(2,&quot;d&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">e</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+
+<h2 id="list-get-获取方法"><a href="#list-get-获取方法" class="headerlink" title="list.get() 获取方法"></a>list.get() 获取方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt;list&#x3D;new ArrayList&lt;String&gt;();</span><br><span class="line">list.add(&quot;tom&quot;);</span><br><span class="line">String c&#x3D;list.get(0);</span><br><span class="line">System.out.println(c);</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tom</span><br></pre></td></tr></table></figure>
+
+<h2 id="list-remove-index-；删除方法；按照索引删除"><a href="#list-remove-index-；删除方法；按照索引删除" class="headerlink" title="list.remove(index)；删除方法；按照索引删除"></a>list.remove(index)；删除方法；按照索引删除</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt;list&#x3D;new ArrayList&lt;String&gt;();</span><br><span class="line">list.add(&quot;tom&quot;);</span><br><span class="line">list.remove(0);</span><br><span class="line">System.out.println(list.gei(0));</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">报错！因为长度为0</span><br></pre></td></tr></table></figure>
+
+<h2 id="remove-Object-o-；-按照元素内容删除；"><a href="#remove-Object-o-；-按照元素内容删除；" class="headerlink" title="remove(Object o)； 按照元素内容删除；"></a>remove(Object o)； 按照元素内容删除；</h2><h2 id="list中是否包含某个元素；"><a href="#list中是否包含某个元素；" class="headerlink" title="list中是否包含某个元素；"></a>list中是否包含某个元素；</h2><p>方法：.contains（Object o）； 返回true或者false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt;list&#x3D;new ArrayList&lt;String&gt;();</span><br><span class="line">   list.add(&quot;香蕉&quot;);</span><br><span class="line">   list.add(&quot;苹果&quot;);</span><br><span class="line">   list.add(&quot;菠萝&quot;);</span><br><span class="line">   &#x2F;&#x2F;for循环遍历</span><br><span class="line">   for(int i&#x3D;0;i&lt;list.size();i++)</span><br><span class="line">   &#123;</span><br><span class="line">    System.out.println(list.get(i));</span><br><span class="line">   &#125;</span><br><span class="line">   &#x2F;&#x2F;true  OR  false</span><br><span class="line">   System.out.println(&quot;list中是否包含苹果：&quot;+list.contains(&quot;苹果&quot;));</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">香蕉</span><br><span class="line">苹果</span><br><span class="line">菠萝</span><br><span class="line">list中是否包含苹果：true</span><br></pre></td></tr></table></figure>
+
+<h2 id="list中根据索引将元素数值改变-替换-；"><a href="#list中根据索引将元素数值改变-替换-；" class="headerlink" title="list中根据索引将元素数值改变(替换)；"></a>list中根据索引将元素数值改变(替换)；</h2><p><strong>list.set(index, element);:替换原来位置上的字符</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt;list&#x3D;new ArrayList&lt;String&gt;();</span><br><span class="line">   System.out.println(list.size());</span><br><span class="line">   list.add(&quot;a&quot;);</span><br><span class="line">   list.add(&quot;b&quot;);</span><br><span class="line">   list.add(&quot;c&quot;);</span><br><span class="line">   list.add(&quot;d&quot;);</span><br><span class="line">   list.add(&quot;e&quot;);</span><br><span class="line">   list.set(0,&quot;Alice&quot;);</span><br><span class="line">   list.set(1,&quot;Alice&quot;);</span><br><span class="line">   System.out.println(list.size());</span><br><span class="line">   for(int i&#x3D;0;i&lt;list.size();i++)</span><br><span class="line">    System.out.println(list.get(i));</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">5</span><br><span class="line">Alice</span><br><span class="line">Alice</span><br><span class="line">c</span><br><span class="line">d</span><br><span class="line">e</span><br></pre></td></tr></table></figure>
+<p><strong>list.add(index, element);将添加的放到索引位置，原来的数据往下移</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt;list&#x3D;new ArrayList&lt;String&gt;();</span><br><span class="line">   System.out.println(list.size());</span><br><span class="line">   list.add(&quot;a&quot;);</span><br><span class="line">   list.add(&quot;b&quot;);</span><br><span class="line">   list.add(&quot;c&quot;);</span><br><span class="line">   list.add(&quot;d&quot;);</span><br><span class="line">   list.add(&quot;e&quot;);</span><br><span class="line">   list.add(0,&quot;Alice&quot;);</span><br><span class="line">   list.add(1,&quot;Alice&quot;);</span><br><span class="line">   System.out.println(list.size());</span><br><span class="line">   for(int i&#x3D;0;i&lt;list.size();i++)</span><br><span class="line">    System.out.println(list.get(i));</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">7</span><br><span class="line">Alice</span><br><span class="line">Alice</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">d</span><br><span class="line">e</span><br></pre></td></tr></table></figure>
+
+<h2 id="list中查看（判断）元素的索引；"><a href="#list中查看（判断）元素的索引；" class="headerlink" title="list中查看（判断）元素的索引；"></a>list中查看（判断）元素的索引；</h2><p><strong>list.indexOf（）和  list.lastIndexOf（）的不同</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt;list&#x3D;new ArrayList&lt;&gt;();</span><br><span class="line">     list.add(&quot;a&quot;);    &#x2F;&#x2F;索引为0</span><br><span class="line">     list.add(&quot;b&quot;);    &#x2F;&#x2F;索引为1</span><br><span class="line">     list.add(&quot;c&quot;);    &#x2F;&#x2F;索引为2</span><br><span class="line">     list.add(&quot;a&quot;);    &#x2F;&#x2F;索引为3</span><br><span class="line">     list.add(&quot;c&quot;);    &#x2F;&#x2F;索引为4</span><br><span class="line">            System.out.println(list.indexOf(&quot;a&quot;));</span><br><span class="line">            System.out.println(list.lastIndexOf(&quot;a&quot;));</span><br><span class="line">            System.out.println(list.indexOf(&quot;c&quot;));</span><br><span class="line">            System.out.println(list.lastIndexOf(&quot;c&quot;));</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<h2 id="利用list中索引位置重新生成一个新的list（截取集合）"><a href="#利用list中索引位置重新生成一个新的list（截取集合）" class="headerlink" title="利用list中索引位置重新生成一个新的list（截取集合）"></a>利用list中索引位置重新生成一个新的list（截取集合）</h2><p>　<strong>方法： .subList(fromIndex, toIndex)；　　.size() ； 该方法得到list中的元素数的和</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list&#x3D;new ArrayList&lt;&gt;();</span><br><span class="line">         list.add(&quot;a&quot;);    &#x2F;&#x2F;索引为0</span><br><span class="line">         list.add(&quot;b&quot;);    &#x2F;&#x2F;索引为1</span><br><span class="line">         list.add(&quot;c&quot;);    &#x2F;&#x2F;索引为2</span><br><span class="line">         list.add(&quot;d&quot;);    &#x2F;&#x2F;索引为3</span><br><span class="line">         list.add(&quot;e&quot;);    &#x2F;&#x2F;索引为4</span><br><span class="line">         &#x2F;&#x2F;原list进行遍历</span><br><span class="line">         for(String pho:list)&#123;</span><br><span class="line">             System.out.println(pho);</span><br><span class="line">         &#125;</span><br><span class="line">         &#x2F;&#x2F;生成新list</span><br><span class="line">         list&#x3D;list.subList(1, 4);  &#x2F;&#x2F;.subList(fromIndex, toIndex)      &#x2F;&#x2F;利用索引1-4的对象重新生成一个list，但是不包含索引为4的元素，4-1&#x3D;3</span><br><span class="line">         for (int i &#x3D; 0; i &lt; list.size(); i++) &#123; &#x2F;&#x2F;list.size() 该方法得到list中的元素数的和</span><br><span class="line">             System.out.println(&quot;新的list包含的元素是&quot;+list.get(i));</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对比两个list中的所有元素"><a href="#对比两个list中的所有元素" class="headerlink" title="对比两个list中的所有元素"></a>对比两个list中的所有元素</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (person.equals(fruits)) &#123;</span><br><span class="line">    System.out.println(&quot;两个list中的所有元素相同&quot;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="判断list是否为空"><a href="#判断list是否为空" class="headerlink" title="判断list是否为空"></a>判断list是否为空</h2><p>方法：list.isEmpty()  空则返回true，非空则返回false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (list.isEmpty()) &#123;</span><br><span class="line">                System.out.println(&quot;空的&quot;);</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                System.out.println(&quot;不是空的&quot;);</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不是空的</span><br></pre></td></tr></table></figure>
+
+<h2 id="将集合转换为字符串；"><a href="#将集合转换为字符串；" class="headerlink" title="将集合转换为字符串；"></a>将集合转换为字符串；</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String liString&#x3D;&quot;&quot;;</span><br><span class="line">liString&#x3D;person.toString();</span><br><span class="line">System.out.println(&quot;将集合转换为字符串:&quot;+liString);</span><br></pre></td></tr></table></figure>
+
+<h2 id="将集合转换为数组；"><a href="#将集合转换为数组；" class="headerlink" title="将集合转换为数组；"></a>将集合转换为数组；</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(&quot;将集合转换为数组:&quot;+person.toArray());</span><br></pre></td></tr></table></figure>
+
+<h2 id="迭代器（Iterator）"><a href="#迭代器（Iterator）" class="headerlink" title="迭代器（Iterator）"></a>迭代器（Iterator）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">迭代器（Iterator）</span><br><span class="line">　　迭代器是一种设计模式，它是一个对象，它可以遍历并选择序列中的对象，而开发人员不需要了解该序列的底层结构。迭代器通常被称为“轻量级”对象，因为创建它的代价小。</span><br><span class="line">　　Java中的Iterator功能比较简单，并且只能单向移动：</span><br><span class="line">　　(1) 使用方法iterator()要求容器返回一个Iterator。第一次调用Iterator的next()方法时，它返回序列的第一个元素。注意：iterator()方法是java.lang.Iterable接口,被Collection继承。</span><br><span class="line">　　(2) 使用next()获得序列中的下一个元素。</span><br><span class="line">　　(3) 使用hasNext()检查序列中是否还有元素。</span><br><span class="line">　　(4) 使用remove()将迭代器新返回的元素删除。</span><br><span class="line">　　Iterator是Java迭代器最简单的实现，为List设计的ListIterator具有更多的功能，它可以从两个方向遍历List，也可以从List中插入和删除元素。</span><br></pre></td></tr></table></figure>
+<p><strong>迭代器的应用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">list l &#x3D; new ArrayList();</span><br><span class="line"> l.add(&quot;aa&quot;);</span><br><span class="line"> l.add(&quot;bb&quot;);</span><br><span class="line"> l.add(&quot;cc&quot;);</span><br><span class="line"> for (Iterator iter &#x3D; l.iterator(); iter.hasNext();) &#123;</span><br><span class="line">     String str &#x3D; (String)iter.next();</span><br><span class="line">     System.out.println(str);</span><br><span class="line"> &#125;</span><br><span class="line"> &#x2F;*迭代器用于while循环</span><br><span class="line"> Iterator iter &#x3D; l.iterator();</span><br><span class="line"> while(iter.hasNext())&#123;</span><br><span class="line">     String str &#x3D; (String) iter.next();</span><br><span class="line">     System.out.println(str);</span><br><span class="line"> &#125;</span><br><span class="line"> *&#x2F;</span><br></pre></td></tr></table></figure>
+<p>Person类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class Person &#123;</span><br><span class="line">private String name;</span><br><span class="line">private int age;</span><br><span class="line">public Person() &#123;</span><br><span class="line"> super();</span><br><span class="line">&#125;</span><br><span class="line">public Person(String name, int age) &#123;</span><br><span class="line"> super();</span><br><span class="line"> this.name &#x3D; name;</span><br><span class="line"> this.age &#x3D; age;</span><br><span class="line">&#125;</span><br><span class="line">public String getName() &#123;</span><br><span class="line"> return name;</span><br><span class="line">&#125;</span><br><span class="line">public void setName(String name) &#123;</span><br><span class="line"> this.name &#x3D; name;</span><br><span class="line">&#125;</span><br><span class="line">public int getAge() &#123;</span><br><span class="line"> return age;</span><br><span class="line">&#125;</span><br><span class="line">public void setAge(int age) &#123;</span><br><span class="line"> this.age &#x3D; age;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> Iterator<Person> it=list.iterator();<br> while(it.hasNext()) {<br> Person p0=it.next();<br>  System.out.println(“Person”+p0.getName()+” ,”+p0.getAge());<br> }<br> System.out.println(list.contains(new Person(“tom999”,99)));<br> }</p>
+<pre><code></code></pre>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/01/21/java-list%E9%9B%86%E5%90%88%E7%B1%BB%20(1)/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -296,7 +434,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018-2020 <a href="https:/yongjun-fan.github.io/" target="_blank">yongjun-fan</a>
+    		&copy; 2020 <a href="https:/yongjun-fan.github.io/" target="_blank">yongjun-fan</a>
     	</div>
       	<div class="footer-right">
 			
